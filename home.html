@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<div class="container mt-5">
+    <form method="post" class="card p-4 shadow-sm"> 
+        <img src="https://drive.google.com/thumbnail?id=1JceiW7DZ1P-fsNZCq2XFrwpfHnx9Tz8b" class="rounded logo" alt="SecurComm Pro Logo">
+        <h1 class="mb-4 text-center startupText">Enter the Chat Room</h1>
+        <div class="form-group mb-3">
+            <label for="name">Name:</label>
+            <input type="text" id="name" class="form-control" placeholder="Enter your name" name="name" value="{{name}}">
+        </div>
+        <div class="form-group mb-3">
+            <label for="code">Room Code:</label>
+            <input type="password" id="code" class="form-control" placeholder="Enter room code (only for joining required)" name="code" value="{{code}}">
+        </div>
+        <div class="d-flex justify-content-between mb-3">
+            <button type="submit" name="join" class="btn btn-primary">Join a Room</button>
+            <button type="submit" name="create" class="btn btn-success">Create a Room</button>
+        </div>
+        {% if error %}
+        <div class="alert alert-danger">
+            <ul class="mb-0">
+                <li id="errormsg">{{error}}</li>
+            </ul>
+        </div>
+        {% endif %}
+    </form>
+</div>
+
+{% endblock %}
